@@ -1,11 +1,245 @@
-<html>
-    <head>
-        <title>我的第一个网页</title>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的网页</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background-color: #444;
+            padding: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        nav a:hover {
+            background-color: #666;
+            border-radius: 4px;
+        }
+
+        /* 主要内容样式 */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* 图片样式 */
+        .image-container {
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+
+        /* 表单样式 */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
         <h1>欢迎来到我的网页</h1>
-        <p>这是一个段落。</p >
-        <a href=" ">访问我的主页</a >
-        < img src="image.jpg" alt="示例图片" />
-    </body>
+        <p>这是一个简单的HTML示例页面</p >
+    </header>
+
+    <!-- 导航栏 -->
+    <nav>
+        <ul>
+            <li><a href=" ">首页</a ></li>
+            <li><a href="#about">关于我们</a ></li>
+            <li><a href="#services">服务</a ></li>
+            <li><a href="#contact">联系我们</a ></li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 首页部分 -->
+        <section id="home">
+            <h2>首页</h2>
+            <p>欢迎访问我们的网站！这里是首页内容区域，你可以放置一些介绍性的文字或图片。</p >
+            
+            <div class="image-container">
+                < img src="https://picsum.photos/800/400" alt="示例图片">
+            </div>
+            
+            <a href="#about" class="btn">了解更多</a >
+        </section>
+
+        <!-- 关于我们部分 -->
+        <section id="about">
+            <h2>关于我们</h2>
+            <p>我们是一家专注于提供优质服务的公司，成立于2020年，致力于为客户提供最好的产品和服务体验。</p >
+            <p>我们的团队由一群充满激情和创造力的专业人士组成，拥有丰富的行业经验。</p >
+        </section>
+
+        <!-- 服务部分 -->
+        <section id="services">
+            <h2>我们的服务</h2>
+            <ul>
+                <li>网站设计与开发</li>
+                <li>移动应用开发</li>
+                <li>数字营销服务</li>
+                <li>品牌设计与推广</li>
+                <li>技术咨询与支持</li>
+            </ul>
+        </section>
+
+        <!-- 联系我们部分 -->
+        <section id="contact">
+            <h2>联系我们</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">留言</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">发送</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2023 我的网页. 保留所有权利.</p >
+    </footer>
+
+    <script>
+        // 简单的交互效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
